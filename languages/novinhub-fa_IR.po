@@ -1,0 +1,177 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: novinhub\n"
+"POT-Creation-Date: 2020-12-05 09:58+0330\n"
+"PO-Revision-Date: 2020-12-05 10:39+0330\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fa_IR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4.2\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: inc/Api/Callbacks/AdminCallbacks.php:30
+msgid "Novinhub Token"
+msgstr "توکن نوین هاب"
+
+#: inc/Api/Callbacks/AdminCallbacks.php:38
+msgid "Your Novinhub Token"
+msgstr "توکن نوین هاب شما"
+
+#: inc/Pages/Admin.php:23 templates/admin.php:10
+msgid "Novinhub Plugin"
+msgstr "پلاگین نوین هاب"
+
+#: inc/Pages/Admin.php:24
+msgid "Novinhub"
+msgstr "نوین هاب"
+
+#: inc/Pages/Admin.php:61
+msgid "Settings"
+msgstr "تنظیمات"
+
+#: inc/Pages/Admin.php:74
+msgid "Enter your Token below"
+msgstr "توکن خود را در کادر رو به رو وارد کنید"
+
+#: inc/Pages/Admin.php:76
+msgid "Your Token is"
+msgstr "توکن شما این است"
+
+#: inc/Pages/PostMetaBox.php:31
+msgid "Added by Novinhub"
+msgstr "اضافه شده توسط نوین هاب"
+
+#: templates/admin.php:16
+msgid "Set Token"
+msgstr "تنظیم توکن"
+
+#: templates/admin.php:35
+msgid "Number of accounts assigned to token:"
+msgstr "تعداد اکانت‌های متصل به این توکن:"
+
+#: templates/admin.php:63 templates/post.php:39 templates/post.php:106
+#: templates/post.php:111 templates/post.php:116
+msgid "Error"
+msgstr "خطا"
+
+#: templates/admin.php:64
+msgid "Invalid Token..."
+msgstr "توکن نامعتبر است..."
+
+#: templates/post.php:21
+msgid "Send To Your Social Accounts"
+msgstr "ارسال به اکانت‌های اجتماعی شما"
+
+#: templates/post.php:40
+msgid "Something went wrong, please refresh the page to get accounts again"
+msgstr ""
+"مشکلی به وجود آمده است. لطفا برای گرفتن اکانت‌های خود صفحه را رفرش کنید."
+
+#: templates/post.php:47
+msgid "Caption Draft"
+msgstr "پیش نویس کپشن"
+
+#: templates/post.php:52
+msgid "Choose accounts to send to"
+msgstr "اکانت خود را برای ارسال انتخاب کنید"
+
+#: templates/post.php:72
+msgid "Publish later"
+msgstr "بعدا منتشر شود"
+
+#: templates/post.php:91
+msgid "Warning"
+msgstr "اخطار"
+
+#: templates/post.php:92
+msgid "If more than one image is selected, the first one will be uploaded..."
+msgstr "اگر بیش از یک تصویر انتخاب شده باشد، تنها اولین تصویر آپلود خواهد شد."
+
+#: templates/post.php:94
+msgid "If more than one video is selected, the first one will be uploaded..."
+msgstr "اگر بیش از یک ویدئو انتخاب شده باشد، تنها اولین ویدئو آپلود خواهد شد."
+
+#: templates/post.php:96
+msgid ""
+"If image and video are selected simultaneously, only the image will be "
+"uploaded..."
+msgstr "اگر تصویر و ویدئو هر دو انتخاب شده باشند، تنها تصویر آپلود خواهد شد."
+
+#: templates/post.php:101
+msgid "Send"
+msgstr "ارسال"
+
+#: templates/post.php:107
+msgid "Choose at least one account to send to"
+msgstr "حداقل یک اکانت برای ارسال انتخاب کنید"
+
+#: templates/post.php:112
+msgid "Choose at least a media to upload"
+msgstr "حداقل یک مدیا برای آپلود انتخاب کنید"
+
+#: templates/post.php:117
+msgid "Write caption"
+msgstr "کپشن بنویسید"
+
+#: templates/post.php:124 templates/post.php:136 templates/post.php:165
+msgid "Wait!"
+msgstr "صبر کنید!"
+
+#: templates/post.php:125
+msgid "Uploading Image..."
+msgstr "در حال آپلود عکس..."
+
+#: templates/post.php:129 templates/post.php:141 templates/post.php:153
+msgid "Error!"
+msgstr "خطا!"
+
+#: templates/post.php:130
+msgid "Image upload has error:"
+msgstr "آپلود عکس با خطا مواجه شد:"
+
+#: templates/post.php:137
+msgid "Uploading Video, It may takes some seconds..."
+msgstr "در حال آپلود ویدئو، ممکن است چند ثانیه طول بکشد..."
+
+#: templates/post.php:142
+msgid "Video upload has error:"
+msgstr "آپلود ویدئو با مشکل مواجه شد:"
+
+#: templates/post.php:148
+msgid "Successful!"
+msgstr "موفق!"
+
+#: templates/post.php:149
+msgid "Wait, Finishing..."
+msgstr "صبر کنید، در حال اتمام..."
+
+#: templates/post.php:154
+msgid "Post upload has error:"
+msgstr "آپلود پست با خطا مواجه شد:"
+
+#: templates/post.php:158
+msgid "Done!"
+msgstr "انجام شد!"
+
+#: templates/post.php:159
+msgid "Your post sent to novinhub successfully."
+msgstr "پست شما با موفقیت به نوین هاب ارسال شد."
+
+#: templates/post.php:166
+msgid "Sending post without media..."
+msgstr "ارسال پست بدون مدیا..."
+
+#~ msgid "Wait"
+#~ msgstr "صبر کنید"
+
+#~ msgid "card-header"
+#~ msgstr "عنوان کادر"
+
+#~ msgid "Danger"
+#~ msgstr "خطا"

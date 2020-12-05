@@ -1,0 +1,18 @@
+# Glue terminal files
+**/terminal.glue
+
+# OS X Desktop Services Store files
+**/.DS_Store
+
+# Dev config files
+*/-dev.php
+
+.idea
+
+.vscode
+
+vendor
+
+composer.lock
+
+composer.phar

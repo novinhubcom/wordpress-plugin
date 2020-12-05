@@ -1,0 +1,21 @@
+{
+  "name": "masoud_sa/novinhub",
+  "type": "project",
+  "license": "MIT",
+  "version": "0.0.1",
+  "authors": [
+    {
+      "name": "datasc-masa",
+      "email": "Masoudsa291171@gmail.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "autoload": {
+    "psr-4": {
+      "Inc\\": "./inc"
+    }
+  },
+  "require": {
+    "novinhubcom/php-sdk": "^0.0.3"
+  }
+}
