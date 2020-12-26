@@ -3,7 +3,7 @@
  * @package Novinhub
  */
 
-namespace Inc;
+namespace Novinhub\Inc;
 
 final class Init
 {

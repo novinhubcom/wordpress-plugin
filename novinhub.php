@@ -1,16 +1,24 @@
 <?php
 /**
  * @package Novinhub
- */
-/*
- * Plugin Name: Novinhub plugin
+ *
+ *
+ * Plugin Name: Novinhub
  * Plugin URI: https://myurl.com/plugin
- * Description: Novinhub wordpress plugin for sending wordpress posts to novinhub api.
+ * Description: Novinhub wordpress plugin for sending wordpress posts to your social medias.
  * Version: 1.0.0
- * Author: "Novinhub"
+ * Author: Novinhub
  * Author URI: http://novinhub.com
+ * Text Domain: novinhub
+ * Domain Path: /languages
  * License:
  */
+
+//Translate Plaugin Description...
+$des = __('Novinhub wordpress plugin for sending wordpress posts to your social medias.', 'novinhub');
+
+
+
 
 //If this file is accessed directly, abort.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -42,18 +50,18 @@ add_action( 'plugins_loaded', 'load_plugin_textdomain' );
 register_activation_hook( __FILE__, 'activate_novinhub_plugin' );
 
 function activate_novinhub_plugin() {
-	Inc\Base\Activate::activate();
+	Novinhub\Inc\Base\Activate::activate();
 }
 
 function deactivate_novinhub_plugin() {
-	Inc\Base\Deactivate::deactivate();
+	Novinhub\Inc\Base\Deactivate::deactivate();
 }
 
 register_deactivation_hook( __FILE__, 'deactivate_novinhub_plugin' );
 
 //Initialize the main class of the plugin
-if ( class_exists( 'Inc\\Init' ) ) {
-	Inc\Init::register_services();
+if ( class_exists( 'Novinhub\\Inc\\Init' ) ) {
+	Novinhub\Inc\Init::register_services();
 }
 
 

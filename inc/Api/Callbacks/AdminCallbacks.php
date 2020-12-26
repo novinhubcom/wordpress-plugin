@@ -3,7 +3,7 @@
  * @package Novinhub
  */
 
-namespace Inc\Api\Callbacks;
+namespace Novinhub\Inc\Api\Callbacks;
 
 class AdminCallbacks {
 	
@@ -27,7 +27,7 @@ class AdminCallbacks {
 	 * Echo Novinhub Token to admin template
 	 */
 	public function novinhubAdminSection() {
-		echo __( 'Novinhub Token', 'novinhub' );
+		echo '<p>' . __( 'After installing the plugin, take your access token from your', 'novinhub') . '<a href="https://panel.novinhub.com/profile" target="_blank" style="text-decoration: none;">' . __(' Novinhub Profile ', 'novinhub') . '</a>' . __('and insert below.', 'novinhub') . '<p>';
 	}
 	
 	/**
@@ -35,6 +35,6 @@ class AdminCallbacks {
 	 */
 	public function novinhubGetToken() {
 		$value = esc_attr( get_option( 'novinhub_token' ) );
-		echo '<input type="text" class="regular-text col-12" name="novinhub_token" value="' . $value . '" placeholder="' . __('Your Novinhub Token', 'novinhub') . '">';
+		echo '<input type="text" class="regular-text col-12 col-sm-12" name="novinhub_token" value="' . $value . '" placeholder="' . __('Your Novinhub Token', 'novinhub') . '">';
 	}
 }

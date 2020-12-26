@@ -12,8 +12,9 @@
   "minimum-stability": "dev",
   "autoload": {
     "psr-4": {
-      "Inc\\": "./inc"
-    }
+      "Novinhub\\Inc\\": "./inc"
+    },
+    "classmap": ["inc/"]
   },
   "require": {
     "novinhubcom/php-sdk": "^0.0.3"

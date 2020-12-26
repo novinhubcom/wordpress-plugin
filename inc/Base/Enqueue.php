@@ -3,7 +3,7 @@
  * @package Novinhub
  */
 
-namespace Inc\Base;
+namespace Novinhub\Inc\Base;
 
 class Enqueue {
 	
@@ -29,16 +29,15 @@ class Enqueue {
 			wp_enqueue_style( 'mypluginstyle1',
 				PLUGIN_URL . 'assets/styles/mystyle.css' );
 			
-			wp_enqueue_style( 'mypluginstyle2',
-				PLUGIN_URL . 'assets/styles/bootstrap.min.css' );
-			
-			wp_enqueue_style( 'date-picker',
-				PLUGIN_URL . 'assets/styles/persian-datepicker.css' );
-			
-			//			wp_enqueue_script( 'mypluginscript3',
-			//				PLUGIN_URL . 'assets/scripts/jquery.min.js' );
 			
 			wp_add_inline_script( 'jquery-core', '$ = jQuery;' );
+			
+			
+		}
+		
+		if ( $hook_suffix === 'post.php' or $hook_suffix === 'post-new.php' ) {
+			wp_enqueue_style( 'date-picker',
+				PLUGIN_URL . 'assets/styles/persian-datepicker.css' );
 			
 			wp_enqueue_script( 'persian-date',
 				PLUGIN_URL . 'assets/scripts/persian-date.js', [ 'jquery' ] );
@@ -49,9 +48,6 @@ class Enqueue {
 			
 			wp_enqueue_script( 'post-js',
 				PLUGIN_URL . 'assets/scripts/post.js', [ 'jquery' ] );
-			
-			wp_enqueue_script( 'mypluginscript2',
-				PLUGIN_URL . 'assets/scripts/bootstrap.min.js', [ 'jquery' ] );
 		}
 		
 	}

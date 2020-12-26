@@ -3,7 +3,7 @@
  * @package Novinhub
  */
 
-namespace Inc\Api;
+namespace Novinhub\Inc\Api;
 
 class ApiSettings {
 	

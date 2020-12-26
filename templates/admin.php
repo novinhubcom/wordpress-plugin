@@ -4,7 +4,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-
 ?>
 <div class="wrap">
     <h1 <?php if ( get_locale() === 'fa_IR' ) {
@@ -18,7 +17,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<?php
 		settings_fields( 'novinhub_options_group' );
 		do_settings_sections( 'Novinhub_Plugin' );
+		echo '<div style="display: flex; justify-content: center;">';
 		submit_button( __( 'Set Token', 'novinhub' ) );
+		echo '</div>';
 		?>
     </form>
 	<?php
@@ -37,19 +38,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 			}
 		}
 		?>
-        <p class="text-info <?php if ( get_locale() === 'fa_IR' ) {
-			echo 'text-right';
-		} ?>"
-           style="font-size: 1rem;"><?php echo __( 'Number of accounts assigned to token:',
+        <p style="font-size: 1rem;"><?php echo __( 'Number of accounts assigned to token:',
 				'novinhub' ); ?> <span
-                    class="text-danger"><?php echo $count; ?> </span></p>
+                    style="color: red;"><?php echo $count; ?> </span></p>
 		<?php
 		echo '<div>';
-		echo '<table class="table table-striped table-hover">
+		echo '<table id="novinhubAccountsTable">
             <thead>
-                <th class="text-center">ID</th>
-                <th class="text-center">Name</th>
-                <th class="text-center">Type</th>
+                <th class="text-center" style="font-family: sans-serif">' . __('ID', 'novinhub') .'</th>
+                <th class="text-center" style="font-family: sans-serif">' . __('Name', 'novinhub') .'</th>
+                <th class="text-center" style="font-family: sans-serif">' . __('Type', 'novinhub') . '</th>
             </thead>
             <tbody>';
 		foreach ( $accounts as $account ) {
@@ -69,18 +67,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 		$message = $e->getMessage();
 		if ( $message === 'توکن نامعتبر است' ) {
 			delete_option( 'novinhub_token' );
-			echo '<div class="alert alert-danger text-center">';
+			echo '<div class="novinhub-alert novinhub-alert-danger" style="text-align: center">';
 			echo '<strong>' . __( 'Error',
 					'novinhub' ) . '</strong> ' . __( 'Invalid Token...',
 					'novinhub' );
 		} else {
 			delete_option( 'novinhub_token' );
-			echo '<div class="alert alert-danger text-center">';
+			echo '<div class="novinhub-alert novinhub-alert-danger" style="text-align: center;">';
 			echo '<strong>' . __( 'Error',
 					'novinhub' ) . '</strong> ' . $message;
 		}
 	}
-	
+ 
 	echo '</div>';
 	?>
 

@@ -3,7 +3,7 @@
  * @package Novinhub
  */
 
-namespace Inc\Pages;
+namespace Novinhub\Inc\Pages;
 
 
 class PostMetaBox {

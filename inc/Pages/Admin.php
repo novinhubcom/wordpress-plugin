@@ -3,10 +3,10 @@
  * @package Novinhub
  */
 
-namespace Inc\Pages;
+namespace Novinhub\Inc\Pages;
 
-use Inc\Api\ApiSettings;
-use Inc\Api\Callbacks\adminCallbacks;
+use Novinhub\Inc\Api\ApiSettings;
+use Novinhub\Inc\Api\Callbacks\AdminCallbacks;
 
 class Admin {
 	
@@ -25,7 +25,8 @@ class Admin {
 				'capability' => 'manage_options',
 				'menu_slug'  => 'Novinhub_Plugin',
 				'callback'   => [ $this->callbacks, 'AdminDashboard' ],
-				'icon_url'   => plugins_url( '../../assets/images/logo2.png', __FILE__),
+//				'icon_url'   => plugins_url( '../../assets/images/logo2.png', __FILE__),
+				'icon_url' => 'https://novinhub.com/assets/img/logo/novinhub-icon-16.png',
 				'position'   => 110,
 			],
 		];
@@ -71,7 +72,7 @@ class Admin {
 		$args = [
 			[
 				'id'       => 'novinhub_token',
-				'title'    => get_option( 'novinhub_token' ) === '' ? __( 'Enter your Token below',
+				'title'    => get_option( 'novinhub_token' ) === '' ? __( 'Enter your Token Here',
 					'novinhub' ) :
 					__( 'Your Token is', 'novinhub' ),
 				'callback' => [ $this->callbacks, 'novinhubGetToken' ],

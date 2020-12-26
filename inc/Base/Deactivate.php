@@ -3,7 +3,7 @@
  * @package Novinhub
  */
 
-namespace Inc\Base;
+namespace Novinhub\Inc\Base;
 
 class Deactivate {
 	

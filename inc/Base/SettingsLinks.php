@@ -3,7 +3,7 @@
  * @package Novinhub
  */
 
-namespace Inc\Base;
+namespace Novinhub\Inc\Base;
 
 class SettingsLinks {
 	
@@ -21,7 +21,7 @@ class SettingsLinks {
 	 * @return links
 	 */
 	public function settings_link( $links ) {
-		$settings_link = '<a href="admin.php?page=Novinhub_Plugin">Settings</a>';
+		$settings_link = '<a href="admin.php?page=Novinhub_Plugin">' . __('Settings', 'novinhub') . '</a>';
 		array_push( $links, $settings_link );
 		
 		return $links;
