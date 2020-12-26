@@ -9,7 +9,6 @@
       "email": "Masoudsa291171@gmail.com"
     }
   ],
-  "minimum-stability": "dev",
   "autoload": {
     "psr-4": {
       "Novinhub\\Inc\\": "./inc"
