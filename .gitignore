@@ -1,7 +1,5 @@
-# Glue terminal files
-**/terminal.glue
+.idea
 
-# OS X Desktop Services Store files
-**/.DS_Store
+vendor
 
 composer.lock
