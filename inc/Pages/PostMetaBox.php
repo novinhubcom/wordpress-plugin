@@ -28,7 +28,7 @@ class PostMetaBox {
 	
 	public function add_box() {
 		add_meta_box( 'novinhub_post_page',
-			translate( __( 'Added by Novinhub', 'novinhub' ) ), [
+			translate( __( 'Novinhub', 'novinhub' ) ), [
 				$this,
 				'novinhub_post_page_html',
 			], 'post' );

@@ -69,7 +69,7 @@ if (!$accounts) {
     //List of accounts ( End )
 
     //Create Text area to show draft
-    echo '<p id="captionDraft" style="margin-top: 30px;">' . __('Caption Draft',
+    echo '<p id="captionDraft" style="margin-top: 30px;">' . __('Novinhub',
             'novinhub') . '</p>';
     echo '<section id="novinhubTextSection">
 					<textarea id="novinhubTxt" rows="5" class="col-12 col-sm-12"></textarea>
