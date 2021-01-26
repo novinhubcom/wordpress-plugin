@@ -27,6 +27,8 @@ You can set an optional date to publish your post. to do, you should check the '
 pick a date you want.
 
 * Added Media
+If you want to add media to your post, you can do this through Featured Image section or
+image or video blocks easily.
 
 === Installation ===
 
@@ -66,11 +68,11 @@ has a limit on number of characters.
 
 To add media to your post, you can do this through image or video blocks easily.
 But you should be alert:
-1. If more than one image has been attached, the first one will be uploaded.(Featured image will not be uploaded.)
+1. If more than one image has been attached, the first one will be uploaded.(Highest Priority: Featured Image)
 2. If more than one video has been attached, the first one will be uploaded.
 3. If image and video have been attached simultaneously, only the image will be uploaded.
 
 = How do i add some hashtags to send? =
 
-If you want to Add some Hashtags into your caption, you can insert your hashtags into "Add New Tag" section. (Be sure your hashtags added correctly to wordpress.)
+If you want to Add some Hashtags into your caption, you can insert your hashtags into Tags section. (Be sure your hashtags added correctly to wordpress.)
 

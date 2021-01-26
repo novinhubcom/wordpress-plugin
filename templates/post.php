@@ -80,8 +80,32 @@ if (!$accounts) {
 
     echo '<div style="text-align: center; padding: 10px;"><a id="copyTextAndTags" class="novinhub-btn novinhub-btn-success"
 	  style="cursor: pointer;">'
-        . esc_html(__('Create Caption using post text And Copy Tags from sidebar', 'novinhub')) . '</a></div>';
+        . esc_html(__('Create Caption using post text, get Media and copy Tags from sidebar', 'novinhub')) . '</a></div>';
 
+    echo '<div id="thereIsNoMediaWarning" class="novinhub-alert novinhub-alert-danger" style="display: none; text-align: center;">';
+    echo '<strong>' . esc_html(__('Warning!',
+            'novinhub')) . '</strong> ' . esc_html(__('There is no Media...',
+            'novinhub'));
+    echo '</div>';
+
+    //For wooCommerce product page
+    echo '<div id="thereIsNoImageWarning" class="novinhub-alert novinhub-alert-danger" style="display: none; text-align: center;">';
+    echo '<strong>' . esc_html(__('Warning!',
+            'novinhub')) . '</strong> ' . esc_html(__('There is no Image...',
+            'novinhub'));
+    echo '</div>';
+
+    echo '<div id="availableImage" class="novinhub-alert novinhub-alert-info" style="display: none; text-align: center;">';
+    echo '<strong>' . esc_html(__('Image:',
+            'novinhub')) . '</strong> ' . '<span><a href="" target="_blank" style="text-decoration: none;">' . esc_html(__('Click to check',
+            'novinhub')) . '</a></span>';
+    echo '</div>';
+
+    echo '<div id="availableVideo" class="novinhub-alert novinhub-alert-info" style="display: none; text-align: center;">';
+    echo '<strong>' . esc_html(__('Video:',
+            'novinhub')) . '</strong> ' . '<span><a href="" target="_blank" style="text-decoration: none;">' . esc_html(__('Click to check',
+            'novinhub')) . '</a></span>';
+    echo '</div>';
 
     echo '<div id="thereIsNoTagsWarning" class="novinhub-alert novinhub-alert-danger" style="display: none; text-align: center;">';
     echo '<strong>' . esc_html(__('Warning!',
@@ -123,13 +147,13 @@ if (!$accounts) {
     //Warnings For Regular Post Page
     echo '<div id="forRegularPostPage">';
     echo '<li style="margin-top: 10px;">' . esc_html(__('If more than one image has been attached, the first one will be uploaded... 
-            (Featured image will not be uploaded.)',
+            (Highest Priority: Featured Image)',
             'novinhub')) . '</li>';
     echo '<li>' . esc_html(__('If more than one video has been attached, the first one will be uploaded...',
             'novinhub')) . '</li>';
     echo '<li>' . esc_html(__('If image and video have been attached simultaneously, only the image will be uploaded...',
             'novinhub')) . '</li>';
-    echo '<li>' . esc_html(__('If you want to Add some Hashtags into your caption, you can insert your hashtags into "Add New Tag" section. (Be sure your hashtags added correctly to wordpress.)',
+    echo '<li>' . esc_html(__('If you want to Add some Hashtags into your caption, you can insert your hashtags into Tags section. (Be sure your hashtags added correctly to wordpress.)',
             'novinhub')) . '</li>';
     echo '</div>';
     //Warnings For Woocommerce Product Page

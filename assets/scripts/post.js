@@ -6,13 +6,17 @@ jQuery(document).ready(function ($) {
     var max_count = 0;
     var hashtag = [];
     var mandatory_caption = false;
+    var has_video = false;
+    var video_url;
+    var has_image = false;
+    var image_url;
 
     //Show Warnings based on page type
     //Show warnings for Woocommerce product page
-    if ($('.woocommerce-page').length > 0){
+    if ($('.woocommerce-page').length > 0) {
         $("#forRegularPostPage").css('display', 'none');
         $("#forWoocommerceProductPage").css('display', 'block');
-    }else{
+    } else {
         //Show warnings for regular post page
         $("#forWoocommerceProductPage").css('display', 'none');
         $("#forRegularPostPage").css('display', 'block');
@@ -138,6 +142,7 @@ jQuery(document).ready(function ($) {
     }
 
     function copyText() {
+        //Check if Gutenberg ( default ) editor being used
         if ($(".block-editor-block-list__block").length > 0) {
             var title = $('textarea.editor-post-title__input').val();
             var contents = $(".block-editor-rich-text__editable");
@@ -167,10 +172,23 @@ jQuery(document).ready(function ($) {
 
             $("#novinhubTxt").val(content);
             setCharLimit($("#novinhubTxt").val());
-        }else{
-            
-        }
+        } else {
+            //If Classic editor may being used
+            var title = $('#title').val();
+            var contents = tinymce.activeEditor.getContent({format: 'text'});
 
+            var content = '';
+            if (title != '') {
+                content += title + '\n';
+            }
+            content += contents;
+            if (max_count !== 0) {
+                content = content.substring(0, max_count);
+            }
+
+            $("#novinhubTxt").val(content);
+            setCharLimit($("#novinhubTxt").val());
+        }
 
 
         //IF USER IS IN WOOCOMMERCE PRODUCT PAGE
@@ -179,14 +197,14 @@ jQuery(document).ready(function ($) {
             var product_des = tinyMCE.get('excerpt').getContent({format: 'text'});
             var product_price = $('#_sale_price').val();
             var content = '';
-            if (product_title != ''){
+            if (product_title != '') {
                 content += product_title + '\n';
             }
             content += product_des;
-            if (product_price != ''){
-                if ($('html').attr('lang') === 'fa-IR'){
+            if (product_price != '') {
+                if ($('html').attr('lang') === 'fa-IR') {
                     content += '\n' + 'قیمت: ' + product_price + ' ریال';
-                }else
+                } else
                     content += '\n' + 'Price: ' + product_price + ' $';
             }
 
@@ -222,7 +240,123 @@ jQuery(document).ready(function ($) {
     $('#copyTextAndTags').on('click', function () {
         copyText();
 
-        hashtags = $('.components-form-token-field__token');
+        //Show Media for user control
+        //Get thumbnail from wooCommerce product page
+        if ($('.woocommerce-page').length > 0) {
+            if ($('#set-post-thumbnail img').length > 0) {
+                image_url = $('#set-post-thumbnail img').attr('src');
+                has_image = true;
+                $('#thereIsNoImageWarning').css('display', 'none');
+                $('#availableImage').css('display', 'block');
+                $('#availableImage a').attr('href', image_url);
+            } else {
+                has_image = true;
+                $('#availableImage').css('display', 'none');
+                $('#thereIsNoImageWarning').css('display', 'block');
+            }
+        } else {
+            //Check if featured image has been added in post page
+            if ($('.editor-post-featured-image__container img').length > 0) {
+                image_url = $('.editor-post-featured-image__container img').attr('src');
+                has_image = true;
+                $('#thereIsNoMediaWarning').css('display', 'none');
+                $('#availableVideo').css('display', 'none');
+                $('#availableImage').css('display', 'block');
+                $('#availableImage a').attr('href', image_url);
+            } else {
+                has_image = false;
+                //Check if the box has image to upload
+                var image = $(".block-editor-block-list__layout [aria-label='Block: Image'] img");
+                var image_fa = $(".block-editor-block-list__layout [aria-label='بلوک: تصویر'] img");
+                if (image.length > 0 || image_fa.length > 0) {
+                    has_image = true;
+                    if (image_fa.length > 0) {
+                        image_url = image_fa.attr('src');
+                    } else if (image.length > 0) {
+                        image_url = image.attr('src');
+                    }
+                    $('#thereIsNoMediaWarning').css('display', 'none');
+                    $('#availableVideo').css('display', 'none');
+                    $('#availableImage').css('display', 'block');
+                    $('#availableImage a').attr('href', image_url);
+                } else {
+                    $('#availableImage').css('display', 'none');
+                    $('#thereIsNoMediaWarning').css('display', 'block');
+
+                    //Check if featured image has been added in classic editor
+                    if ($(".attachment-post-thumbnail").length > 0) {
+                        image_url = $('.attachment-post-thumbnail').attr('src');
+                        has_image = true;
+                        $('#thereIsNoMediaWarning').css('display', 'none');
+                        $('#availableVideo').css('display', 'none');
+                        $('#availableImage').css('display', 'block');
+                        $('#availableImage a').attr('href', image_url);
+                    }else{
+                        has_image = false;
+                        $('#availableImage').css('display', 'none');
+                        $('#thereIsNoMediaWarning').css('display', 'block');
+                    }
+                }
+            }
+            //Check if the box has video to upload in post page
+            if (!has_image) {
+                var video = $(".block-editor-block-list__layout [aria-label='Block: Video'] video");
+                var video_fa = $(".block-editor-block-list__layout [aria-label='بلوک: ویدئو'] video");
+                if (video.length > 0 || video_fa.length > 0) {
+                    has_video = true;
+                    if (video_fa.length > 0) {
+                        video_url = video_fa.attr('src');
+                    } else if (video.length > 0) {
+                        video_url = video.attr('src');
+                    }
+                    $('#thereIsNoMediaWarning').css('display', 'none');
+                    $('#availableVideo').css('display', 'block');
+                    $('#availableVideo a').attr('href', video_url);
+                } else {
+                    has_video = false;
+                    $('#availableVideo').css('display', 'none');
+                    $('#thereIsNoMediaWarning').css('display', 'block');
+                }
+            }
+        }
+
+        //Check if maybe Classic editor being used
+        if (!has_image && !has_video){
+            if (tinymce.activeEditor != null){
+                //Check for image
+                if (tinymce.activeEditor.$("img").length > 0){
+                    has_image = true;
+                    image_url = tinymce.activeEditor.$("img").attr('src');
+                    $('#thereIsNoMediaWarning').css('display', 'none');
+                    $('#availableVideo').css('display', 'none');
+                    $('#availableImage').css('display', 'block');
+                    $('#availableImage a').attr('href', image_url);
+                }else{
+                    has_image = false;
+                    $('#availableImage').css('display', 'none');
+                    $('#thereIsNoMediaWarning').css('display', 'block');
+                }
+                //Check for video
+                if (!has_image){
+                    var video_url_container = tinymce.activeEditor.getContent();
+                    video_url_container = video_url_container.match(/\bmp4="(.+)\b/);
+                    if (video_url_container != null){
+                        var video_url = video_url_container[1].substring(0, video_url_container[1].length-13);
+                        has_video = true;
+                        $('#thereIsNoMediaWarning').css('display', 'none');
+                        $('#availableVideo').css('display', 'block');
+                        $('#availableVideo a').attr('href', video_url);
+                    }else{
+                        has_video = false;
+                        $('#availableVideo').css('display', 'none');
+                        $('#thereIsNoMediaWarning').css('display', 'block');
+                    }
+                }
+            }
+        }
+
+        //Show hashtags for user control
+        var hashtags = $('.components-form-token-field__token');
         if (hashtags.length > 0) {
             $('#thereIsNoTagsWarning').css('display', 'none');
             $('#availableTags').css('display', 'block');
@@ -239,22 +373,20 @@ jQuery(document).ready(function ($) {
         } else {
             $('#availableTags').css('display', 'none');
             $('#thereIsNoTagsWarning').css('display', 'block');
-        }
 
-        //FOR WOOCOMMERCE PRODUCT PAGE...
-        if ($('.woocommerce-page').length > 0) {
-            if ($("#product_tag").length > 0) {
+            //FOR WOOCOMMERCE PRODUCT PAGE AND FOR CLASSIC EDITOR...
+            if ($('.tagchecklist li').length > 0) {
                 var tags = '';
                 hashtag = [];
                 $('.tagchecklist li').each(function () {
                     hashtag.push($(this)[0].lastChild.textContent.replace(' ', '_'));
                     tags += '#' + $(this)[0].lastChild.textContent.replace(' ', '_');
                 })
-                if ( tags != ''){
+                if (tags != '') {
                     $('#thereIsNoTagsWarning').css('display', 'none');
                     $('#availableTags').css('display', 'block');
                     $('#availableTags span').html(tags);
-                }else{
+                } else {
                     $('#availableTags').css('display', 'none');
                     $('#thereIsNoTagsWarning').css('display', 'block');
                 }
@@ -263,7 +395,6 @@ jQuery(document).ready(function ($) {
                 $('#thereIsNoTagsWarning').css('display', 'block');
             }
         }
-
     })
 
     $('.novinhub_li input[type=checkbox]').change(function () {
@@ -306,47 +437,6 @@ jQuery(document).ready(function ($) {
     });
 
     $(".sendToAPI").on('click', function () {
-        var has_video = false;
-        var has_image = false;
-        if ($('.woocommerce-page').length > 0) {
-            if ($('#set-post-thumbnail img').length > 0){
-                var image_url = $('#set-post-thumbnail img').attr('src');
-                has_image = true;
-            }
-        }else{
-            var more_than_one_videos = false;
-            var more_than_one_images = false;
-
-            //Check if the box has video to upload
-            var video = $(".block-editor-block-list__layout [aria-label='Block: Video'] video");
-            var video_fa = $(".block-editor-block-list__layout [aria-label='بلوک: ویدئو'] video");
-            if (video.length > 0 || video_fa.length > 0) {
-                if (video.length > 1 || video_fa.length > 1) {
-                    more_than_one_videos = true;
-                }
-                has_video = true;
-                if (video_fa.length > 0) {
-                    var video_url = video_fa.attr('src');
-                } else if (video.length > 0) {
-                    var video_url = video.attr('src');
-                }
-            }
-
-            //Check if the box has image to upload
-            var image = $(".block-editor-block-list__layout [aria-label='Block: Image'] img");
-            var image_fa = $(".block-editor-block-list__layout [aria-label='بلوک: تصویر'] img");
-            if (image.length > 0 || image_fa.length > 0) {
-                if (image.length > 1 || image_fa.length > 1) {
-                    more_than_one_images = true;
-                }
-                has_image = true;
-                if (image_fa.length > 0) {
-                    var image_url = image_fa.attr('src');
-                } else if (image.length > 0) {
-                    var image_url = image.attr('src');
-                }
-            }
-        }
 
 
         var ajax_url = $(this).data('ajax_url');

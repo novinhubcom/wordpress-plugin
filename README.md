@@ -32,7 +32,7 @@ your product information as a post to novinhub in order to publish them in your 
 In order to take advantage of the plugin you should figure out these notes:
 
 ### Caption Draft
-1. If you click on "Create Caption using post text And Copy Tags from sidebar" button, all texts you've added in Blocks will appear in Novinhub 'Caption Draft' section. also if you've inserted some hashtags in tags area in sidebar menu, those will appear in the bottom of this button. you can 
+1. If you click on "Create Caption using post text, get Media and copy Tags from sidebar" button, all texts you've added in Blocks will appear in Novinhub 'Caption Draft' section. also you can check your uploaded media before sending and if you've inserted some hashtags in tags area in sidebar menu, those will appear in the bottom of this button. you can 
 modify your caption draft before you send the post to novinhub.
 2. This section control number of characters in the caption. this is necessary if your post destination
 has a limit on number of characters.
@@ -43,7 +43,7 @@ You can set an optional date to publish your post. to do, you should check the '
 pick a date you want.
 
 ### Added Media
-If you want to add media to your post, you can do this through image or video blocks easily.
+If you want to add media to your post, you can do this through Featured Image section or image or video blocks easily.
 
 ## Author
 
