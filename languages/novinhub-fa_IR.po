@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: novinhub\n"
-"POT-Creation-Date: 2020-12-22 15:57+0330\n"
-"PO-Revision-Date: 2020-12-22 15:58+0330\n"
+"POT-Creation-Date: 2021-01-06 13:22+0330\n"
+"PO-Revision-Date: 2021-01-09 09:17+0330\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fa_IR\n"
@@ -39,7 +39,7 @@ msgstr "تنظیمات"
 msgid "Novinhub Plugin"
 msgstr "پلاگین نوین هاب"
 
-#: inc/Pages/Admin.php:24
+#: inc/Pages/Admin.php:24 inc/Pages/PostMetaBox.php:31 templates/post.php:72
 msgid "Novinhub"
 msgstr "نوین هاب"
 
@@ -50,10 +50,6 @@ msgstr "توکن خود را در کادر رو به رو وارد کنید"
 #: inc/Pages/Admin.php:77
 msgid "Your Token is"
 msgstr "توکن شما این است"
-
-#: inc/Pages/PostMetaBox.php:31
-msgid "Added by Novinhub"
-msgstr "اضافه شده توسط نوین هاب"
 
 #: novinhub.php:18
 msgid ""
@@ -81,8 +77,8 @@ msgid "Type"
 msgstr "نوع"
 
 #: templates/admin.php:71 templates/admin.php:77 templates/post.php:34
-#: templates/post.php:39 templates/post.php:48 templates/post.php:140
-#: templates/post.php:145 templates/post.php:150
+#: templates/post.php:39 templates/post.php:48 templates/post.php:150
+#: templates/post.php:155 templates/post.php:160
 msgid "Error"
 msgstr "خطا"
 
@@ -101,10 +97,6 @@ msgstr "مشکلی به وجود آمده است. لطفا برای گرفتن �
 #: templates/post.php:56
 msgid "Choose accounts to send to"
 msgstr "اکانت خود را برای ارسال انتخاب کنید"
-
-#: templates/post.php:72
-msgid "Caption Draft"
-msgstr "پیش نویس کپشن"
 
 #: templates/post.php:76
 msgid "Characters"
@@ -134,7 +126,7 @@ msgstr "بعدا منتشر شود"
 msgid "Warning"
 msgstr "هشدار"
 
-#: templates/post.php:123
+#: templates/post.php:125
 msgid ""
 "If more than one image has been attached, the first one will be uploaded... \n"
 "            (Featured image will not be uploaded.)"
@@ -142,18 +134,18 @@ msgstr ""
 "اگر بیش از یک تصویر وارد شده باشد، تنها اولین تصویر آپلود خواهد شد. (تصویر "
 "شاخص آپلود نخواهد شد.)"
 
-#: templates/post.php:126
+#: templates/post.php:128
 msgid ""
 "If more than one video has been attached, the first one will be uploaded..."
 msgstr "اگر بیش از یک ویدئو وارد شده باشد، تنها اولین ویدئو آپلود خواهد شد."
 
-#: templates/post.php:128
+#: templates/post.php:130
 msgid ""
 "If image and video have been attached simultaneously, only the image will be "
 "uploaded..."
 msgstr "اگر تصویر و ویدئو هر دو وارد شده باشند، تنها تصویر آپلود خواهد شد."
 
-#: templates/post.php:130
+#: templates/post.php:132
 msgid ""
 "If you want to Add some Hashtags into your caption, you can insert your "
 "hashtags into \"Add New Tag\" section. (Be sure your hashtags added correctly "
@@ -163,69 +155,91 @@ msgstr ""
 "\"افزودن برچسب\" وارد کنید. (مطمئن شوید هشتگ‌های شما به درستی به وردپرس اضافه "
 "شوند.)"
 
-#: templates/post.php:135
+#: templates/post.php:137
+msgid ""
+"If you want to add image for your post, you can add one via \"Product image\" "
+"section in right menu..."
+msgstr ""
+"اگر قصد اضافه کردن تصویر برای محصول خود دارید، می‌توانید از قسمت \"تصویر محصول"
+"\" در منوی سمت چپ استفاده کنید..."
+
+#: templates/post.php:139
+msgid ""
+"If you want to add some hashtags for your post, you can add some via "
+"\"Product tags\" section in right menu..."
+msgstr ""
+"اگر قصد اضافه کردن تعدادی هشتگ برای محصول خود دارید، می‌توانید از قسمت \"برچسب "
+"محصولات\" در منوی سمت چپ استفاده کنید..."
+
+#: templates/post.php:145
 msgid "Send"
 msgstr "ارسال"
 
-#: templates/post.php:141
+#: templates/post.php:151
 msgid "Choose at least one account to send to"
 msgstr "حداقل یک اکانت برای ارسال انتخاب کنید"
 
-#: templates/post.php:146
+#: templates/post.php:156
 msgid "Choose at least a media to upload"
 msgstr "حداقل یک مدیا برای آپلود انتخاب کنید"
 
-#: templates/post.php:151
+#: templates/post.php:161
 msgid "Write caption"
 msgstr "کپشن بنویسید"
 
-#: templates/post.php:158 templates/post.php:170 templates/post.php:199
+#: templates/post.php:168 templates/post.php:180 templates/post.php:209
 msgid "Wait!"
 msgstr "صبر کنید!"
 
-#: templates/post.php:159
+#: templates/post.php:169
 msgid "Uploading Image..."
 msgstr "در حال آپلود عکس..."
 
-#: templates/post.php:163 templates/post.php:175 templates/post.php:187
+#: templates/post.php:173 templates/post.php:185 templates/post.php:197
 msgid "Error!"
 msgstr "خطا!"
 
-#: templates/post.php:164
+#: templates/post.php:174
 msgid "Image upload has error:"
 msgstr "آپلود عکس با خطا مواجه شد:"
 
-#: templates/post.php:171
+#: templates/post.php:181
 msgid "Uploading Video, It may takes some seconds..."
 msgstr "در حال آپلود ویدئو، ممکن است چند ثانیه طول بکشد..."
 
-#: templates/post.php:176
+#: templates/post.php:186
 msgid "Video upload has error:"
 msgstr "آپلود ویدئو با مشکل مواجه شد:"
 
-#: templates/post.php:182
+#: templates/post.php:192
 msgid "Successful!"
 msgstr "موفق!"
 
-#: templates/post.php:183
+#: templates/post.php:193
 msgid "Wait, Finishing..."
 msgstr "صبر کنید، در حال اتمام..."
 
-#: templates/post.php:188
+#: templates/post.php:198
 msgid "Post upload has error:"
 msgstr "آپلود پست با خطا مواجه شد:"
 
-#: templates/post.php:192
+#: templates/post.php:202
 msgid "Done!"
 msgstr "انجام شد!"
 
-#: templates/post.php:193
+#: templates/post.php:203
 msgid "Your post sent to novinhub successfully."
 msgstr "پست شما با موفقیت به نوین هاب ارسال شد."
 
-#: templates/post.php:200
+#: templates/post.php:210
 msgid "Sending post without media..."
 msgstr "ارسال پست بدون مدیا..."
+
+#~ msgid "Added by Novinhub"
+#~ msgstr "اضافه شده توسط نوین هاب"
+
+#~ msgid "Caption Draft"
+#~ msgstr "پیش نویس کپشن"
 
 #~ msgid "Novinhub plugin"
 #~ msgstr "پلاگین نوین هاب"

@@ -7,6 +7,16 @@ jQuery(document).ready(function ($) {
     var hashtag = [];
     var mandatory_caption = false;
 
+    //Show Warnings based on page type
+    //Show warnings for Woocommerce product page
+    if ($('.woocommerce-page').length > 0){
+        $("#forRegularPostPage").css('display', 'none');
+        $("#forWoocommerceProductPage").css('display', 'block');
+    }else{
+        //Show warnings for regular post page
+        $("#forWoocommerceProductPage").css('display', 'none');
+        $("#forRegularPostPage").css('display', 'block');
+    }
     $("#novinhubDatepicker").persianDatepicker({
         "inline": false,
         "format": "dddd YYYY/MM/D HH:mm",
@@ -112,18 +122,18 @@ jQuery(document).ready(function ($) {
         }
     });
 
-    function setCharLimit(content){
+    function setCharLimit(content) {
         var content_length = content.length;
-        if (content_length === max_count){
+        if (content_length === max_count) {
             $("#numberOfChars").html(max_count);
-        }else{
+        } else {
             $("#numberOfChars").html(content_length);
         }
 
-        if (max_count === 0){
+        if (max_count === 0) {
             $("#charLimit").html('/ ∞');
-        }else{
-            $("#charLimit").html('/ '+max_count);
+        } else {
+            $("#charLimit").html('/ ' + max_count);
         }
     }
 
@@ -132,13 +142,13 @@ jQuery(document).ready(function ($) {
             var title = $('textarea.editor-post-title__input').val();
             var contents = $(".block-editor-rich-text__editable");
             var content = '';
-            if (title !== ''){
+            if (title !== '') {
                 content += title + '<br data-rich-text-line-break="true">';
             }
             if (contents.length > 0) {
                 contents.each(function (index, key) {
                     if ($(key).attr('contenteditable') === 'true') {
-                        if (!$(key).html().includes('contenteditable="false"')){
+                        if (!$(key).html().includes('contenteditable="false"')) {
                             if (index !== 0) {
                                 content += '<br data-rich-text-line-break="true">';
                             }
@@ -157,23 +167,52 @@ jQuery(document).ready(function ($) {
 
             $("#novinhubTxt").val(content);
             setCharLimit($("#novinhubTxt").val());
+        }else{
+            
+        }
+
+
+
+        //IF USER IS IN WOOCOMMERCE PRODUCT PAGE
+        if ($('.woocommerce-page').length > 0) {
+            var product_title = $('#title').val();
+            var product_des = tinyMCE.get('excerpt').getContent({format: 'text'});
+            var product_price = $('#_sale_price').val();
+            var content = '';
+            if (product_title != ''){
+                content += product_title + '\n';
+            }
+            content += product_des;
+            if (product_price != ''){
+                if ($('html').attr('lang') === 'fa-IR'){
+                    content += '\n' + 'قیمت: ' + product_price + ' ریال';
+                }else
+                    content += '\n' + 'Price: ' + product_price + ' $';
+            }
+
+            if (max_count !== 0) {
+                content = content.substring(0, max_count);
+            }
+
+            $("#novinhubTxt").val(content);
+            setCharLimit($("#novinhubTxt").val());
         }
     }
 
-    $('#novinhubTxt').keypress(function(e){
+    $('#novinhubTxt').keypress(function (e) {
         var caption_content = $(this).val();
-        if (max_count > 0){
+        if (max_count > 0) {
             if (caption_content.length === max_count) {
                 e.preventDefault();
             }
         }
     })
 
-    $('#novinhubTxt').on('keyup', function(){
+    $('#novinhubTxt').on('keyup', function () {
         var caption_content = $(this).val();
-        if (max_count === 0){
+        if (max_count === 0) {
             setCharLimit(caption_content);
-        }else{
+        } else {
             if (caption_content.length <= max_count) {
                 setCharLimit(caption_content);
             }
@@ -194,11 +233,37 @@ jQuery(document).ready(function ($) {
                 hashtag.push($(this).find('span [aria-hidden = true]').text().replace(' ', '_'));
                 tags += '#' + $(this).find('span [aria-hidden = true]').text().replace(' ', '_');
             })
+            $('#thereIsNoTagsWarning').css('display', 'none');
+            $('#availableTags').css('display', 'block');
             $('#availableTags span').html(tags);
         } else {
             $('#availableTags').css('display', 'none');
             $('#thereIsNoTagsWarning').css('display', 'block');
         }
+
+        //FOR WOOCOMMERCE PRODUCT PAGE...
+        if ($('.woocommerce-page').length > 0) {
+            if ($("#product_tag").length > 0) {
+                var tags = '';
+                hashtag = [];
+                $('.tagchecklist li').each(function () {
+                    hashtag.push($(this)[0].lastChild.textContent.replace(' ', '_'));
+                    tags += '#' + $(this)[0].lastChild.textContent.replace(' ', '_');
+                })
+                if ( tags != ''){
+                    $('#thereIsNoTagsWarning').css('display', 'none');
+                    $('#availableTags').css('display', 'block');
+                    $('#availableTags span').html(tags);
+                }else{
+                    $('#availableTags').css('display', 'none');
+                    $('#thereIsNoTagsWarning').css('display', 'block');
+                }
+            } else {
+                $('#availableTags').css('display', 'none');
+                $('#thereIsNoTagsWarning').css('display', 'block');
+            }
+        }
+
     })
 
     $('.novinhub_li input[type=checkbox]').change(function () {
@@ -216,9 +281,9 @@ jQuery(document).ready(function ($) {
 
         if (twitter !== 0) {
             max_count = 280;
-        }else if (linkedin !== 0) {
+        } else if (linkedin !== 0) {
             max_count = 1300;
-        }else if (facebook !== 0){
+        } else if (facebook !== 0) {
             max_count = 2000;
         } else if (twitter === 0 && instagram !== 0) {
             max_count = 2200;
@@ -238,45 +303,51 @@ jQuery(document).ready(function ($) {
         setCharLimit($("#novinhubTxt").val());
 
 
-
     });
 
     $(".sendToAPI").on('click', function () {
         var has_video = false;
         var has_image = false;
-        var more_than_one_videos = false;
-        var more_than_one_images = false;
-
-
-        //Check if the box has video to upload
-        var video = $(".block-editor-block-list__layout [aria-label='Block: Video'] video");
-        var video_fa = $(".block-editor-block-list__layout [aria-label='بلوک: ویدئو'] video");
-        if (video.length > 0 || video_fa.length > 0) {
-            if (video.length > 1 || video_fa.length > 1) {
-                more_than_one_videos = true;
+        if ($('.woocommerce-page').length > 0) {
+            if ($('#set-post-thumbnail img').length > 0){
+                var image_url = $('#set-post-thumbnail img').attr('src');
+                has_image = true;
             }
-            has_video = true;
-            if (video_fa.length > 0) {
-                var video_url = video_fa.attr('src');
-            } else if (video.length > 0) {
-                var video_url = video.attr('src');
+        }else{
+            var more_than_one_videos = false;
+            var more_than_one_images = false;
+
+            //Check if the box has video to upload
+            var video = $(".block-editor-block-list__layout [aria-label='Block: Video'] video");
+            var video_fa = $(".block-editor-block-list__layout [aria-label='بلوک: ویدئو'] video");
+            if (video.length > 0 || video_fa.length > 0) {
+                if (video.length > 1 || video_fa.length > 1) {
+                    more_than_one_videos = true;
+                }
+                has_video = true;
+                if (video_fa.length > 0) {
+                    var video_url = video_fa.attr('src');
+                } else if (video.length > 0) {
+                    var video_url = video.attr('src');
+                }
+            }
+
+            //Check if the box has image to upload
+            var image = $(".block-editor-block-list__layout [aria-label='Block: Image'] img");
+            var image_fa = $(".block-editor-block-list__layout [aria-label='بلوک: تصویر'] img");
+            if (image.length > 0 || image_fa.length > 0) {
+                if (image.length > 1 || image_fa.length > 1) {
+                    more_than_one_images = true;
+                }
+                has_image = true;
+                if (image_fa.length > 0) {
+                    var image_url = image_fa.attr('src');
+                } else if (image.length > 0) {
+                    var image_url = image.attr('src');
+                }
             }
         }
 
-        //Check if the box has image to upload
-        var image = $(".block-editor-block-list__layout [aria-label='Block: Image'] img");
-        var image_fa = $(".block-editor-block-list__layout [aria-label='بلوک: تصویر'] img");
-        if (image.length > 0 || image_fa.length > 0) {
-            if (image.length > 1 || image_fa.length > 1) {
-                more_than_one_images = true;
-            }
-            has_image = true;
-            if (image_fa.length > 0) {
-                var image_url = image_fa.attr('src');
-            } else if (image.length > 0) {
-                var image_url = image.attr('src');
-            }
-        }
 
         var ajax_url = $(this).data('ajax_url');
         var caption = $("#novinhubTxt").val();

@@ -4,7 +4,7 @@ Novinhub Wordpress Plugin
 ## Requirements
 
 1. PHP 5.6 and later
-2. Wordpress at least 5.2 ( Tested up to 5.5 ) 
+2. Wordpress at least 5.3 ( Tested up to 5.6 ) 
 
 ## Installation and Usage
 
@@ -23,6 +23,10 @@ Novinhub Wordpress Plugin
 ## Send Posts to Novinhub 
 In admin edit or new post pages, the novinhub section will appear. you can use it and send posts
 to novinhub in order to publish them in your social accounts.
+
+## Send WooCommerce Products as a post to Novinhub
+In WooCommerce admin new or edit product page, the novinhub section will appear. you can use it and send
+your product information as a post to novinhub in order to publish them in your social accounts.
 
 ## Additional Important Notes
 In order to take advantage of the plugin you should figure out these notes:

@@ -6,7 +6,7 @@
 namespace Novinhub\Inc\Pages;
 
 
-class PostMetaBox {
+class NovinhubWPPostMetaBox {
 	
 	private $if_has_token = false;
 	
@@ -19,27 +19,26 @@ class PostMetaBox {
 	/**
 	 * Add hook for add meta box if access token available
 	 */
-	public function register() {
+	public function novinhubWPRegister() {
 		if ( $this->if_has_token ) {
-			add_action( 'add_meta_boxes', [ $this, 'add_box' ] );
-			//		add_action( 'save_post', [ $this, 'save_post' ] );
+			add_action( 'add_meta_boxes', [ $this, 'novinhubWPAddBox' ] );
 		}
 	}
 	
-	public function add_box() {
+	public function novinhubWPAddBox() {
 		add_meta_box( 'novinhub_post_page',
-			translate( __( 'Novinhub', 'novinhub' ) ), [
+			translate( esc_html(__( 'Novinhub', 'novinhub' )) ), [
 				$this,
-				'novinhub_post_page_html',
+				'novinhubWPPostPageHtml',
 			] );
 	}
 	
 	/**
 	 * Include post template
 	 */
-	public function novinhub_post_page_html() {
+	public function novinhubWPPostPageHtml() {
 		
-		require_once( PLUGIN_PATH . '/templates/post.php' );
+		require_once( NOVINHUBWP_PLUGIN_PATH . '/templates/post.php' );
 		
 	}
 }
