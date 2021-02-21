@@ -27,7 +27,7 @@ class NovinhubWPEnqueue {
 			'post-new.php',
 		] ) ) {
 			wp_enqueue_style( 'mypluginstyle1',
-                NOVINHUBWP_PLUGIN_URL . 'assets/styles/mystyle.css' );
+                NOVINHUBWP_PLUGIN_URL . 'assets/styles/NovinhubWPStyle.css' );
 			
 			
 			wp_add_inline_script( 'jquery-core', '$ = jQuery;' );
@@ -47,7 +47,7 @@ class NovinhubWPEnqueue {
 				[ 'jquery' ] );
 			
 			wp_enqueue_script( 'post-js',
-                NOVINHUBWP_PLUGIN_URL . 'assets/scripts/post.js', [ 'jquery' ] );
+                NOVINHUBWP_PLUGIN_URL . 'assets/scripts/NovinhubWPPost.js', [ 'jquery' ] );
 		}
 		
 	}

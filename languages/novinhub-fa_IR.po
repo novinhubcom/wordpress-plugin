@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: novinhub\n"
-"POT-Creation-Date: 2021-01-26 22:50+0330\n"
-"PO-Revision-Date: 2021-01-26 22:50+0330\n"
+"POT-Creation-Date: 2021-02-21 17:27+0330\n"
+"PO-Revision-Date: 2021-02-21 17:28+0330\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fa_IR\n"
@@ -15,47 +15,40 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: inc/Api/Callbacks/AdminCallbacks.php:30
 #: inc/Api/Callbacks/NovinhubWPAdminCallbacks.php:30
 msgid "After installing the plugin, take your access token from your"
 msgstr "پس از نصب افزونه، توکن خود را از"
 
-#: inc/Api/Callbacks/AdminCallbacks.php:30
 #: inc/Api/Callbacks/NovinhubWPAdminCallbacks.php:30
 msgid " Novinhub Profile "
 msgstr " پروفایل نوین هاب "
 
-#: inc/Api/Callbacks/AdminCallbacks.php:30
 #: inc/Api/Callbacks/NovinhubWPAdminCallbacks.php:30
 msgid "and insert below."
 msgstr "خود برداشته و در قسمت زیر وارد کنید."
 
-#: inc/Api/Callbacks/AdminCallbacks.php:38
 #: inc/Api/Callbacks/NovinhubWPAdminCallbacks.php:38
 msgid "Your Novinhub Token"
 msgstr "توکن نوین هاب شما"
 
-#: inc/Base/NovinhubWPSettingsLinks.php:24 inc/Base/SettingsLinks.php:24
-#: inc/Pages/Admin.php:62 inc/Pages/NovinhubWPAdmin.php:62
+#: inc/Base/NovinhubWPSettingsLinks.php:24 inc/Pages/NovinhubWPAdmin.php:62
 msgid "Settings"
 msgstr "تنظیمات"
 
-#: inc/Pages/Admin.php:23 inc/Pages/NovinhubWPAdmin.php:23
-#: templates/admin.php:11
+#: inc/Pages/NovinhubWPAdmin.php:23 templates/admin.php:11
 msgid "Novinhub Plugin"
 msgstr "پلاگین نوین هاب"
 
-#: inc/Pages/Admin.php:24 inc/Pages/NovinhubWPAdmin.php:24
-#: inc/Pages/NovinhubWPPostMetaBox.php:30 inc/Pages/PostMetaBox.php:31
+#: inc/Pages/NovinhubWPAdmin.php:24 inc/Pages/NovinhubWPPostMetaBox.php:30
 #: templates/post.php:72
 msgid "Novinhub"
 msgstr "نوین هاب"
 
-#: inc/Pages/Admin.php:75 inc/Pages/NovinhubWPAdmin.php:75
+#: inc/Pages/NovinhubWPAdmin.php:75
 msgid "Enter your Token Here"
 msgstr "توکن خود را در کادر رو به رو وارد کنید"
 
-#: inc/Pages/Admin.php:77 inc/Pages/NovinhubWPAdmin.php:77
+#: inc/Pages/NovinhubWPAdmin.php:77
 msgid "Your Token is"
 msgstr "توکن شما این است"
 
@@ -85,8 +78,8 @@ msgid "Type"
 msgstr "نوع"
 
 #: templates/admin.php:71 templates/admin.php:77 templates/post.php:34
-#: templates/post.php:39 templates/post.php:48 templates/post.php:174
-#: templates/post.php:179 templates/post.php:184
+#: templates/post.php:39 templates/post.php:48 templates/post.php:178
+#: templates/post.php:183 templates/post.php:188
 msgid "Error"
 msgstr "خطا"
 
@@ -185,81 +178,97 @@ msgstr ""
 
 #: templates/post.php:161
 msgid ""
-"If you want to add image for your post, you can add one via \"Product image\" "
+"If you want to add description about your product, you can use \"Product "
+"short description\" section..."
+msgstr ""
+"اگر قصد اضافه کردن توضیح برای محصول خود دارید، می‌توانید از قسمت \"توضیح کوتاه "
+"درباره محصول\" استفاده کنید..."
+
+#: templates/post.php:163
+msgid ""
+"If you want to add image for your product, you can use \"Product image\" "
 "section in right menu..."
 msgstr ""
 "اگر قصد اضافه کردن تصویر برای محصول خود دارید، می‌توانید از قسمت \"تصویر محصول"
 "\" در منوی سمت چپ استفاده کنید..."
 
-#: templates/post.php:163
+#: templates/post.php:165
 msgid ""
-"If you want to add some hashtags for your post, you can add some via "
-"\"Product tags\" section in right menu..."
+"If you want to add some hashtags for your product, you can use \"Product tags"
+"\" section in right menu..."
 msgstr ""
 "اگر قصد اضافه کردن تعدادی هشتگ برای محصول خود دارید، می‌توانید از قسمت \"برچسب "
 "محصولات\" در منوی سمت چپ استفاده کنید..."
 
-#: templates/post.php:169
+#: templates/post.php:167
+msgid ""
+"If you want to add price for your product, you can use \"Sale price\" "
+"section..."
+msgstr ""
+"اگر قصد اضافه کردن قیمت برای محصول خود دارید، می‌توانید از قسمت \"قیمت فروش "
+"ویژه\" استفاده کنید..."
+
+#: templates/post.php:173
 msgid "Send"
 msgstr "ارسال"
 
-#: templates/post.php:175
+#: templates/post.php:179
 msgid "Choose at least one account to send to"
 msgstr "حداقل یک اکانت برای ارسال انتخاب کنید"
 
-#: templates/post.php:180
+#: templates/post.php:184
 msgid "Choose at least a media to upload"
 msgstr "حداقل یک مدیا برای آپلود انتخاب کنید"
 
-#: templates/post.php:185
+#: templates/post.php:189
 msgid "Write caption"
 msgstr "کپشن بنویسید"
 
-#: templates/post.php:192 templates/post.php:204 templates/post.php:233
+#: templates/post.php:196 templates/post.php:208 templates/post.php:237
 msgid "Wait!"
 msgstr "صبر کنید!"
 
-#: templates/post.php:193
+#: templates/post.php:197
 msgid "Uploading Image..."
 msgstr "در حال آپلود عکس..."
 
-#: templates/post.php:197 templates/post.php:209 templates/post.php:221
+#: templates/post.php:201 templates/post.php:213 templates/post.php:225
 msgid "Error!"
 msgstr "خطا!"
 
-#: templates/post.php:198
+#: templates/post.php:202
 msgid "Image upload has error:"
 msgstr "آپلود عکس با خطا مواجه شد:"
 
-#: templates/post.php:205
+#: templates/post.php:209
 msgid "Uploading Video, It may takes some seconds..."
 msgstr "در حال آپلود ویدئو، ممکن است چند ثانیه طول بکشد..."
 
-#: templates/post.php:210
+#: templates/post.php:214
 msgid "Video upload has error:"
 msgstr "آپلود ویدئو با مشکل مواجه شد:"
 
-#: templates/post.php:216
+#: templates/post.php:220
 msgid "Successful!"
 msgstr "موفق!"
 
-#: templates/post.php:217
+#: templates/post.php:221
 msgid "Wait, Finishing..."
 msgstr "صبر کنید، در حال اتمام..."
 
-#: templates/post.php:222
+#: templates/post.php:226
 msgid "Post upload has error:"
 msgstr "آپلود پست با خطا مواجه شد:"
 
-#: templates/post.php:226
+#: templates/post.php:230
 msgid "Done!"
 msgstr "انجام شد!"
 
-#: templates/post.php:227
+#: templates/post.php:231
 msgid "Your post sent to novinhub successfully."
 msgstr "پست شما با موفقیت به نوین هاب ارسال شد."
 
-#: templates/post.php:234
+#: templates/post.php:238
 msgid "Sending post without media..."
 msgstr "ارسال پست بدون مدیا..."
 

@@ -158,9 +158,13 @@ if (!$accounts) {
     echo '</div>';
     //Warnings For Woocommerce Product Page
     echo '<div id="forWoocommerceProductPage">';
-    echo '<li style="margin-top: 10px;">' . esc_html(__('If you want to add image for your post, you can add one via "Product image" section in right menu...',
+    echo '<li style="margin-top: 10px;">' . esc_html(__('If you want to add description about your product, you can use "Product short description" section...',
             'novinhub')) . '</li>';
-    echo '<li>' . esc_html(__('If you want to add some hashtags for your post, you can add some via "Product tags" section in right menu...',
+    echo '<li>' . esc_html(__('If you want to add image for your product, you can use "Product image" section in right menu...',
+            'novinhub')) . '</li>';
+    echo '<li>' . esc_html(__('If you want to add some hashtags for your product, you can use "Product tags" section in right menu...',
+            'novinhub')) . '</li>';
+    echo '<li>' . esc_html(__('If you want to add price for your product, you can use "Sale price" section...',
             'novinhub')) . '</li>';
     echo '</div>';
     echo '</div>';
