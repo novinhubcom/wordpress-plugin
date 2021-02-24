@@ -192,48 +192,55 @@ if (!$accounts) {
 
     //Upload post in page alerts
     //with image
-    echo '<div id="uploadNovinhubImageWaitingMessage" class="novinhub-alert novinhub-alert-success" style="display: none; text-align: center;">';
+    echo '<div id="uploadNovinhubImageWaitingMessage" class="after-send-alert novinhub-alert novinhub-alert-success" style="display: none; text-align: center;">';
     echo '<strong>' . esc_html(__('Wait!',
             'novinhub')) . '</strong> ' . esc_html(__('Uploading Image...',
             'novinhub'));
     echo '</div>';
-    echo '<div id="uploadNovinhubImageWaitingError" class="novinhub-alert novinhub-alert-danger" style="display: none; text-align: center;">';
+    echo '<div id="uploadNovinhubImageWaitingError" class="after-send-alert novinhub-alert novinhub-alert-danger" style="display: none; text-align: center;">';
     echo '<strong>' . esc_html(__('Error!',
             'novinhub')) . '</strong> ' . esc_html(__('Image upload has error:',
             'novinhub')) . ' <span></span>';
     echo '</div>';
 
     //with video
-    echo '<div id="uploadNovinhubVideoWaitingMessage" class="novinhub-alert novinhub-alert-success" style="display: none; text-align: center;">';
+    echo '<div id="uploadNovinhubVideoWaitingMessage" class="after-send-alert novinhub-alert novinhub-alert-success" style="display: none; text-align: center;">';
     echo '<strong>' . esc_html(__('Wait!',
             'novinhub')) . '</strong> ' . esc_html(__('Uploading Video, It may takes some seconds...',
             'novinhub'));
     echo '</div>';
-    echo '<div id="uploadNovinhubVideoWaitingError" class="novinhub-alert novinhub-alert-danger" style="display: none; text-align: center;">';
+    echo '<div id="uploadNovinhubVideoWaitingError" class="after-send-alert novinhub-alert novinhub-alert-danger" style="display: none; text-align: center;">';
     echo '<strong>' . esc_html(__('Error!',
             'novinhub')) . '</strong> ' . esc_html(__('Video upload has error:',
             'novinhub')) . ' <span></span>';
     echo '</div>';
 
     //After upload file
-    echo '<div id="finishingNovinhubWaiting" class="novinhub-alert novinhub-alert-success" style="display: none; text-align: center;">';
+    echo '<div id="finishingNovinhubWaiting" class="after-send-alert novinhub-alert novinhub-alert-success" style="display: none; text-align: center;">';
     echo '<strong>' . esc_html(__('Successful!',
             'novinhub')) . '</strong> ' . esc_html(__('Wait, Finishing...',
             'novinhub'));
     echo '</div>';
-    echo '<div id="finishingNovinhubWaitingError" class="novinhub-alert novinhub-alert-danger" style="display: none; text-align: center;">';
+    echo '<div id="finishingNovinhubWaitingError" class="after-send-alert novinhub-alert novinhub-alert-danger" style="display: none; text-align: center;">';
     echo '<strong>' . esc_html(__('Error!',
             'novinhub')) . '</strong> ' . esc_html(__('Post upload has error:',
             'novinhub')) . ' <span></span>';
     echo '</div>';
-    echo '<div id="novinhubFinished" class="novinhub-alert novinhub-alert-success" style="display: none; text-align: center;">';
+    echo '<div id="novinhubFinished" class="after-send-alert novinhub-alert novinhub-alert-success" style="display: none; text-align: center;">';
     echo '<strong>' . esc_html(__('Done!',
             'novinhub')) . '</strong> ' . esc_html(__('Your post sent to novinhub successfully.',
-            'novinhub'));
+            'novinhub')) . '<br>' . esc_html(__('"Sometimes publishing your post may be delayed, please be patient."', 'novinhub'))
+            . '<br>' . esc_html(__('"In case of problems, please contact Novinhub support."', 'novinhub'));
+    echo '</div>';
+    echo '<div id="novinhubFinishedThankYou" class="after-send-alert novinhub-alert novinhub-alert-success" style="display: none; text-align: center;">';
+    echo  '<strong> ' . esc_html(__('Thank you for choosing Novinhub',
+            'novinhub')) . '</strong>';
+    echo '</div>';
     echo '</div>';
 
+
     //without media
-    echo '<div id="sendNovinhubWithoutFile" class="novinhub-alert novinhub-alert-success" style="display: none; text-align: center;">';
+    echo '<div id="sendNovinhubWithoutFile" class="after-send-alert novinhub-alert novinhub-alert-success" style="display: none; text-align: center;">';
     echo '<strong>' . esc_html(__('Wait!',
             'novinhub')) . '</strong> ' . esc_html(__('Sending post without media...',
             'novinhub'));

@@ -8,7 +8,7 @@ Novinhub Wordpress Plugin
 
 ## Installation and Usage
 
-1. [Download](https://novinhub.com/plugin/novinhub_wp_v2_2.zip) the plugin...
+1. [Download](https://novinhub.com/plugin/novinhub_wp_v2_3.zip) the plugin...
 2. Install the plugin on your wordpress.
 
 ## Getting Started

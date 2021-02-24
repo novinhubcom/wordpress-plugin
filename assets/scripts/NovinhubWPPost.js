@@ -446,6 +446,7 @@ jQuery(document).ready(function ($) {
         var accounts = "";
         var number_of_accounts = $('.novinhub_li input[type=checkbox]:checked').length;
         if (number_of_accounts === 0) {
+            $(".after-send-alert").css('display', 'none');
             $("#chooseNovinhubAccountError").css('display', 'block');
             return true;
         }
@@ -453,6 +454,7 @@ jQuery(document).ready(function ($) {
         if (max_count === 2200) {
 
             if (has_image || has_video) {
+                $(".after-send-alert").css('display', 'none');
                 $("#addNovinhubMediaError").css('display', 'none');
             } else {
                 $("#addNovinhubMediaError").css('display', 'block');
@@ -462,6 +464,7 @@ jQuery(document).ready(function ($) {
 
         if (mandatory_caption) {
             if (caption.length <= 1) {
+                $(".after-send-alert").css('display', 'none');
                 $("#addNovinhubCaptionError").css('display', 'block');
             } else {
                 $("#addNovinhubCaptionError").css('display', 'none');
@@ -479,6 +482,7 @@ jQuery(document).ready(function ($) {
 
         //Send to ajax controller for image upload
         if (has_image) {
+            $(".after-send-alert").css('display', 'none');
             $("#uploadNovinhubImageWaitingMessage").css('display', 'block');
             var data = {
                 'action': 'uploadFile',
@@ -501,7 +505,7 @@ jQuery(document).ready(function ($) {
                             'schedule_date': timestamp,
                             'hashtag': hashtag
                         };
-                        $("#uploadNovinhubImageWaitingMessage").css('display', 'none');
+                        $(".after-send-alert").css('display', 'none');
                         $("#finishingNovinhubWaiting").css('display', 'block');
                         $.ajax({
                             url: ajax_url,
@@ -510,29 +514,30 @@ jQuery(document).ready(function ($) {
                             dataType: 'json',
                             success: function (response) {
                                 if (response.success) {
-                                    $("#finishingNovinhubWaiting").css('display', 'none');
+                                    $(".after-send-alert").css('display', 'none');
                                     $("#novinhubFinished").css('display', 'block');
+                                    $("#novinhubFinishedThankYou").css('display', 'block');
                                 } else {
-                                    $("#finishingNovinhubWaiting").css('display', 'none');
+                                    $(".after-send-alert").css('display', 'none');
                                     $("#finishingNovinhubWaitingError").css('display', 'block');
                                     $("#finishingNovinhubWaitingError span").html(response.data.message);
                                 }
 
                             },
                             error: function (error) {
-                                $("#finishingNovinhubWaiting").css('display', 'none');
+                                $(".after-send-alert").css('display', 'none');
                                 $("#finishingNovinhubWaitingError").css('display', 'block');
                                 $("#finishingNovinhubWaitingError span").html(error.responseText);
                             }
                         })
                     } else {
-                        $("#uploadNovinhubImageWaitingMessage").css('display', 'none');
+                        $(".after-send-alert").css('display', 'none');
                         $("#uploadNovinhubImageWaitingError").css('display', 'block');
                         $("#uploadNovinhubImageWaitingError span").html(response.data.message);
                     }
                 },
                 error: function (error) {
-                    $("#uploadNovinhubImageWaitingMessage").css('display', 'none');
+                    $(".after-send-alert").css('display', 'none');
                     $("#uploadNovinhubImageWaitingError").css('display', 'block');
                     $("#uploadNovinhubImageWaitingError span").html(error.responseText);
                 }
@@ -540,6 +545,7 @@ jQuery(document).ready(function ($) {
         }
         //Send to ajax controller for video upload
         else if (has_video) {
+            $(".after-send-alert").css('display', 'none');
             $("#uploadNovinhubVideoWaitingMessage").css('display', 'block');
             var data = {
                 'action': 'uploadFile',
@@ -561,7 +567,7 @@ jQuery(document).ready(function ($) {
                             'schedule_date': timestamp,
                             'hashtag': hashtag
                         };
-                        $("#uploadNovinhubVideoWaitingMessage").css('display', 'none');
+                        $(".after-send-alert").css('display', 'none');
                         $("#finishingNovinhubWaiting").css('display', 'block');
                         $.ajax({
                             url: ajax_url,
@@ -570,29 +576,30 @@ jQuery(document).ready(function ($) {
                             dataType: 'json',
                             success: function (response) {
                                 if (response.success) {
-                                    $("#finishingNovinhubWaiting").css('display', 'none');
+                                    $(".after-send-alert").css('display', 'none');
                                     $("#novinhubFinished").css('display', 'block');
+                                    $("#novinhubFinishedThankYou").css('display', 'block');
                                 } else {
-                                    $("#finishingNovinhubWaiting").css('display', 'none');
+                                    $(".after-send-alert").css('display', 'none');
                                     $("#finishingNovinhubWaitingError").css('display', 'block');
                                     $("#finishingNovinhubWaitingError span").html(response.data.message);
                                 }
 
                             },
                             error: function (error) {
-                                $("#finishingNovinhubWaiting").css('display', 'none');
+                                $(".after-send-alert").css('display', 'none');
                                 $("#finishingNovinhubWaitingError").css('display', 'block');
                                 $("#finishingNovinhubWaitingError span").html(error.responseText);
                             }
                         })
                     } else {
-                        $("#uploadNovinhubVideoWaitingMessage").css('display', 'none');
+                        $(".after-send-alert").css('display', 'none');
                         $("#uploadNovinhubVideoWaitingError").css('display', 'block');
                         $("#uploadNovinhubVideoWaitingError span").html(response.data.message);
                     }
                 },
                 error: function (error) {
-                    $("#uploadNovinhubVideoWaitingMessage").css('display', 'none');
+                    $(".after-send-alert").css('display', 'none');
                     $("#uploadNovinhubVideoWaitingError").css('display', 'block');
                     $("#uploadNovinhubVideoWaitingError span").html(error.responseText);
                 }
@@ -601,6 +608,7 @@ jQuery(document).ready(function ($) {
 
         //Send to ajax controller for upload caption only
         if (!has_video && !has_image) {
+            $(".after-send-alert").css('display', 'none');
             $("#sendNovinhubWithoutFile").css('display', 'block');
             var data = {
                 'action': 'uploadPostWithoutFile',
@@ -618,16 +626,17 @@ jQuery(document).ready(function ($) {
                 dataType: 'json',
                 success: function (response) {
                     if (response.success) {
-                        $("#sendNovinhubWithoutFile").css('display', 'none');
+                        $(".after-send-alert").css('display', 'none');
                         $("#novinhubFinished").css('display', 'block');
+                        $("#novinhubFinishedThankYou").css('display', 'block');
                     } else {
-                        $("#sendNovinhubWithoutFile").css('display', 'none');
+                        $(".after-send-alert").css('display', 'none');
                         $("#finishingNovinhubWaitingError").css('display', 'block');
                         $("#finishingNovinhubWaitingError span").html(response.data.message);
                     }
                 },
                 error: function (error) {
-                    $("#sendNovinhubWithoutFile").css('display', 'none');
+                    $(".after-send-alert").css('display', 'none');
                     $("#finishingNovinhubWaitingError").css('display', 'block');
                     $("#finishingNovinhubWaitingError span").html(error.responseText);
                 }

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: novinhub\n"
-"POT-Creation-Date: 2021-02-21 17:28+0330\n"
-"PO-Revision-Date: 2021-02-21 18:04+0330\n"
+"POT-Creation-Date: 2021-02-24 12:32+0330\n"
+"PO-Revision-Date: 2021-02-24 12:33+0330\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fa_IR\n"
@@ -224,7 +224,7 @@ msgstr "حداقل یک مدیا برای آپلود انتخاب کنید"
 msgid "Write caption"
 msgstr "کپشن بنویسید"
 
-#: templates/post.php:196 templates/post.php:208 templates/post.php:237
+#: templates/post.php:196 templates/post.php:208 templates/post.php:244
 msgid "Wait!"
 msgstr "صبر کنید!"
 
@@ -268,7 +268,19 @@ msgstr "انجام شد!"
 msgid "Your post sent to novinhub successfully."
 msgstr "پست شما با موفقیت به نوین هاب ارسال شد."
 
-#: templates/post.php:238
+#: templates/post.php:232
+msgid "\"Sometimes publishing your post may be delayed, please be patient.\""
+msgstr "\"ممکن است گاهی انتشار پست شما با تاخیر مواجه شود، لطفا شکیبا باشید.\""
+
+#: templates/post.php:233
+msgid "\"In case of problems, please contact Novinhub support.\""
+msgstr "\"در صورت بروز مشکل با پشتیبانی نوین هاب تماس حاصل فرمایید.\""
+
+#: templates/post.php:236
+msgid "Thank you for choosing Novinhub"
+msgstr "از اینکه نوین هاب را انتخاب کرده‌اید، سپاسگزاریم!"
+
+#: templates/post.php:245
 msgid "Sending post without media..."
 msgstr "ارسال پست بدون مدیا..."
 
