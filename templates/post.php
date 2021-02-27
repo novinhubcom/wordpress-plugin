@@ -1,7 +1,7 @@
 <?php
 
 if (!defined('ABSPATH')) {
-    echo "Hey, you don't have permission to access this file";
+    echo esc_html(__("Hey, you don't have permission to access this file", 'novinhub'));
     exit;
 }
 

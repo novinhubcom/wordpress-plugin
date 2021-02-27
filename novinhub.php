@@ -22,7 +22,7 @@ $des = esc_html(__('Novinhub wordpress plugin for sending wordpress posts to you
 
 //If this file is accessed directly, abort.
 if ( ! defined( 'ABSPATH' ) ) {
-	echo "Hey, you don't have permission to access this file";
+	echo esc_html(__("Hey, you don't have permission to access this file", 'novinhub'));
 	exit;
 }
 
@@ -32,7 +32,7 @@ if ( file_exists( dirname( __FILE__ ) . '/vendor/autoload.php' ) ) {
 }
 
 if ( ! function_exists( 'add_action' ) ) {
-	echo "Hey, you don't have permission to access this file";
+	echo esc_html(__("Hey, you don't have permission to access this file", 'novinhub'));
 	exit;
 }
 

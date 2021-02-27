@@ -89,8 +89,7 @@ class NovinhubWPAjax
      */
     public function novinhubWPUploadFile()
     {
-        $file_url = $_POST['file_url'];
-        $file_url = esc_url_raw($file_url);
+        $file_url = esc_url_raw($_POST['file_url']);
         $file_path = $this->novinhubWPGetAttachmentIdFromUrl($file_url);
         try {
             $response = $this->apiClient->post('file',
@@ -110,7 +109,7 @@ class NovinhubWPAjax
     public function novinhubWPUploadPostWithImage()
     {
         if ( isset( $_POST['account_ids'] ) ){
-            $account_ids = $_POST['account_ids'];
+            $account_ids = sanitize_text_field($_POST['account_ids']);
         }else{
             $account_ids = '';
         }
@@ -120,25 +119,25 @@ class NovinhubWPAjax
             $caption = '';
         }
         if ( isset( $_POST['is_scheduled'] ) ){
-            $is_scheduled = $_POST['is_scheduled'];
+            $is_scheduled = rest_sanitize_boolean($_POST['is_scheduled']);
         }else{
             $is_scheduled = '';
         }
         if ( isset( $_POST['schedule_date'] ) ){
-            $schedule_date = $_POST['schedule_date'];
+            $schedule_date = sanitize_text_field($_POST['schedule_date']);
         }else{
             $schedule_date = '';
         }
         if ( isset( $_POST['media_ids'] ) ){
-            $media_ids = $_POST['media_ids'];
+            $media_ids = sanitize_text_field($_POST['media_ids']);
         }else{
             $media_ids = '';
         }
         if ( isset( $_POST['hashtag'] ) ){
-            $hashtags_before = $_POST['hashtag'];
+            $hashtags_before = sanitize_text_field($_POST['hashtag']);
             $hashtags = array();
             foreach ( $hashtags_before as $hashtag ){
-                array_push( $hashtags, sanitize_text_field($hashtag) );
+                array_push( $hashtags, $hashtag );
             }
         }else{
             $hashtags = '';
@@ -170,7 +169,7 @@ class NovinhubWPAjax
     public function novinhubWPUploadPostWithVideo()
     {
         if ( isset( $_POST['account_ids'] ) ){
-            $account_ids = $_POST['account_ids'];
+            $account_ids = sanitize_text_field($_POST['account_ids']);
         }else{
             $account_ids = '';
         }
@@ -180,25 +179,25 @@ class NovinhubWPAjax
             $caption = '';
         }
         if ( isset( $_POST['is_scheduled'] ) ){
-            $is_scheduled = $_POST['is_scheduled'];
+            $is_scheduled = rest_sanitize_boolean($_POST['is_scheduled']);
         }else{
             $is_scheduled = '';
         }
         if ( isset( $_POST['schedule_date'] ) ){
-            $schedule_date = $_POST['schedule_date'];
+            $schedule_date = sanitize_text_field($_POST['schedule_date']);
         }else{
             $schedule_date = '';
         }
         if ( isset( $_POST['media_ids'] ) ){
-            $media_ids = $_POST['media_ids'];
+            $media_ids = sanitize_text_field($_POST['media_ids']);
         }else{
             $media_ids = '';
         }
         if ( isset( $_POST['hashtag'] ) ){
-            $hashtags_before = $_POST['hashtag'];
+            $hashtags_before = sanitize_text_field($_POST['hashtag']);
             $hashtags = array();
             foreach ( $hashtags_before as $hashtag ){
-                array_push( $hashtags, sanitize_text_field($hashtag) );
+                array_push( $hashtags, $hashtag );
             }
         }else{
             $hashtags = '';
@@ -230,7 +229,7 @@ class NovinhubWPAjax
     public function novinhubWPUploadPostWithoutFile()
     {
         if ( isset( $_POST['account_ids'] ) ){
-            $account_ids = $_POST['account_ids'];
+            $account_ids = sanitize_text_field($_POST['account_ids']);
         }else{
             $account_ids = '';
         }
@@ -240,20 +239,20 @@ class NovinhubWPAjax
             $caption = '';
         }
         if ( isset( $_POST['is_scheduled'] ) ){
-            $is_scheduled = $_POST['is_scheduled'];
+            $is_scheduled = rest_sanitize_boolean($_POST['is_scheduled']);
         }else{
             $is_scheduled = '';
         }
         if ( isset( $_POST['schedule_date'] ) ){
-            $schedule_date = $_POST['schedule_date'];
+            $schedule_date = sanitize_text_field($_POST['schedule_date']);
         }else{
             $schedule_date = '';
         }
         if ( isset( $_POST['hashtag'] ) ){
-            $hashtags_before = $_POST['hashtag'];
+            $hashtags_before = sanitize_text_field($_POST['hashtag']);
             $hashtags = array();
             foreach ( $hashtags_before as $hashtag ){
-                array_push( $hashtags, sanitize_text_field($hashtag) );
+                array_push( $hashtags, $hashtag );
             }
         }else{
             $hashtags = '';
