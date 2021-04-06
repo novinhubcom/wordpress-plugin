@@ -58,12 +58,10 @@ if (!$accounts) {
     //List of accounts ( Start )
     echo '<div class="novinhub_li">';
     foreach ($accounts as $account) {
-        if ($account['type'] != 'InstagramOfficial') {
             echo '<label class="novinhub-checkbox-inline col-lg-3 col-md-4 col-sm-6 col-12"><input type="checkbox" value="' . $account['id'] .
                 '" data-type="' . $account['type'] . '">
 	                            						     <img src="' . esc_url(plugins_url('../assets/images/' . strtolower($account['type']) . '.png',
                     __FILE__)) . '"> ' . $account['name'] . '</label>';
-        }
     }
     echo '</div>';
     //List of accounts ( End )

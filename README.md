@@ -4,7 +4,7 @@ Novinhub Wordpress Plugin
 ## Requirements
 
 1. PHP 5.6 and later
-2. Wordpress at least 5.3 ( Tested up to 5.6 ) 
+2. Wordpress at least 5.3 ( Tested up to 5.7 ) 
 
 ## Installation and Usage
 

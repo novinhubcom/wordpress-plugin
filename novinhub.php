@@ -6,7 +6,7 @@
  * Plugin Name: Novinhub
  * Plugin URI: https://novinhub.com/plugins
  * Description: Novinhub wordpress plugin for sending wordpress posts to your social medias.
- * Version: 0.0.4
+ * Version: 0.0.6
  * Author: Novinhub
  * Author URI: http://novinhub.com
  * Text Domain: novinhub

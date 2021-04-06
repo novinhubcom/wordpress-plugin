@@ -33,9 +33,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		
 		$count = 0;
 		foreach ( $accounts as $account ) {
-			if ( $account['type'] != 'InstagramOfficial' ) {
 				$count ++;
-			}
 		}
 		?>
         <p style="font-size: 1rem;"><?php echo esc_html(__( 'Number of accounts assigned to token:',
@@ -51,13 +49,11 @@ if ( ! defined( 'ABSPATH' ) ) {
             </thead>
             <tbody>';
 		foreach ( $accounts as $account ) {
-			if ( $account['type'] != 'InstagramOfficial' ) {
 				echo '<tr>';
 				echo '<td class="text-center">' . $account['id'] . '</td>';
 				echo '<td class="text-center">' . $account['name'] . '</td>';
 				echo '<td class="text-center">' . $account['type'] . '</td>';
 				echo '</tr>';
-			}
 		}
 		echo '</tbody>';
 		echo '</table>';
