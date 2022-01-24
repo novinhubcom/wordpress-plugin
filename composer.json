@@ -16,6 +16,6 @@
     "classmap": ["inc/"]
   },
   "require": {
-    "novinhubcom/php-sdk": "^0.0.3"
+    "novinhubcom/php-sdk": "^0.0.6"
   }
 }
